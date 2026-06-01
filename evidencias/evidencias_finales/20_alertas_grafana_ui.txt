@@ -1,0 +1,31 @@
+=== ALERTAS EN GRAFANA ===
+
+Grafana se encuentra disponible en:
+http://10.0.0.174:3000
+
+Desde Grafana se puede consultar:
+Alerting -> Alert rules
+
+Datasource:
+Prometheus
+
+Alertas y reglas visibles:
+- TiDB_server_is_down
+- PD_server_is_down
+- TiKV_server_is_down
+- Node_exporter_server_is_down
+- Blackbox_exporter_server_is_down
+- NODE_cpu_used_more_than_80%
+- NODE_memory_used_more_than_80%
+- NODE_disk_used_more_than_80%
+- TiKV_space_used_more_than_80%
+- PD_cluster_low_space
+
+Alertmanager activo:
+http://10.0.0.174:9093
+
+Prometheus activo:
+http://10.0.0.174:9090
+
+Conclusión:
+Grafana permite visualizar el estado del cluster TiDB, revisar dashboards de métricas y consultar alertas configuradas desde Prometheus/Alertmanager.

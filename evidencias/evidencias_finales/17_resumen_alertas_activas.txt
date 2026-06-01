@@ -1,0 +1,3 @@
+      2 "alertname":"Blackbox_exporter_server_is_down"
+      2 "alertname":"Node_exporter_server_is_down"
+      2 "alertname":"TiKV_server_is_down"

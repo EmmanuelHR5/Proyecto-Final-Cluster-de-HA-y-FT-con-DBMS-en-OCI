@@ -1,0 +1,14 @@
+fecha_actual
+2026-05-31 20:42:45
+Database
+INFORMATION_SCHEMA
+METRICS_SCHEMA
+PERFORMANCE_SCHEMA
+mysql
+proyecto_final
+test
+Tables_in_proyecto_final
+pedidos
+prueba_pitr
+total_tablas
+2

@@ -1,0 +1,7 @@
+Tables_in_proyecto_final
+pedidos
+prueba_pitr
+total_pedidos
+2
+total_prueba_pitr
+1

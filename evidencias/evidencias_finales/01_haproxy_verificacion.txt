@@ -1,0 +1,61 @@
+=== STATUS HAPROXY ===
+● haproxy.service - HAProxy Load Balancer
+     Loaded: loaded (/usr/lib/systemd/system/haproxy.service; enabled; preset: disabled)
+     Active: active (running) since Sun 2026-05-31 18:52:14 UTC; 1h 43min ago
+    Process: 84700 ExecStartPre=/usr/sbin/haproxy -f $CONFIG -f $CFGDIR -c -q $OPTIONS (code=exited, status=0/SUCCESS)
+   Main PID: 84702 (haproxy)
+     Status: "Ready."
+      Tasks: 3 (limit: 48533)
+     Memory: 6.9M (peak: 7.4M)
+        CPU: 2.043s
+     CGroup: /system.slice/haproxy.service
+             ├─84702 /usr/sbin/haproxy -Ws -f /etc/haproxy/haproxy.cfg -f /etc/haproxy/conf.d -p /run/haproxy.pid
+             └─84704 /usr/sbin/haproxy -Ws -f /etc/haproxy/haproxy.cfg -f /etc/haproxy/conf.d -p /run/haproxy.pid
+
+May 31 20:34:53 dbnodo1 haproxy[84704]: 177.242.8.195:8415 [31/May/2026:20:34:48.567] haproxy_stats haproxy_stats/<STATS> 0/0/5207 23493 LR 1/1/0/0/0 0/0
+May 31 20:34:59 dbnodo1 haproxy[84704]: 177.242.8.195:8415 [31/May/2026:20:34:53.774] haproxy_stats haproxy_stats/<STATS> 0/0/5248 23493 LR 1/1/0/0/0 0/0
+May 31 20:35:04 dbnodo1 haproxy[84704]: 177.242.8.195:8415 [31/May/2026:20:34:59.023] haproxy_stats haproxy_stats/<STATS> 0/0/5218 23493 LR 1/1/0/0/0 0/0
+May 31 20:35:09 dbnodo1 haproxy[84704]: 177.242.8.195:8415 [31/May/2026:20:35:04.241] haproxy_stats haproxy_stats/<STATS> 0/0/5238 23493 LR 1/1/0/0/0 0/0
+May 31 20:35:14 dbnodo1 haproxy[84704]: 177.242.8.195:8415 [31/May/2026:20:35:09.479] haproxy_stats haproxy_stats/<STATS> 0/0/5236 23493 LR 1/1/0/0/0 0/0
+May 31 20:35:19 dbnodo1 haproxy[84704]: 177.242.8.195:8415 [31/May/2026:20:35:14.716] haproxy_stats haproxy_stats/<STATS> 0/0/5240 23490 LR 1/1/0/0/0 0/0
+May 31 20:35:25 dbnodo1 haproxy[84704]: 177.242.8.195:8415 [31/May/2026:20:35:19.957] haproxy_stats haproxy_stats/<STATS> 0/0/5237 23491 LR 1/1/0/0/0 0/0
+May 31 20:35:30 dbnodo1 haproxy[84704]: 177.242.8.195:8415 [31/May/2026:20:35:25.194] haproxy_stats haproxy_stats/<STATS> 0/0/5244 23492 LR 1/1/0/0/0 0/0
+May 31 20:35:35 dbnodo1 haproxy[84704]: 177.242.8.195:8415 [31/May/2026:20:35:30.439] haproxy_stats haproxy_stats/<STATS> 0/0/5247 23492 LR 1/1/0/0/0 0/0
+May 31 20:35:40 dbnodo1 haproxy[84704]: 177.242.8.195:8415 [31/May/2026:20:35:35.687] haproxy_stats haproxy_stats/<STATS> 0/0/5246 23493 LR 1/1/0/0/0 0/0
+
+=== CONFIG HAPROXY ===
+global
+    log /dev/log local0
+    maxconn 4096
+    daemon
+
+defaults
+    log global
+    mode tcp
+    option tcplog
+    timeout connect 10s
+    timeout client 1m
+    timeout server 1m
+
+frontend tidb_frontend
+    bind *:3390
+    default_backend tidb_backend
+
+backend tidb_backend
+    balance roundrobin
+    option tcp-check
+    server tidb1 10.0.0.174:4000 check
+    server tidb2 10.0.0.73:4000 check
+    server tidb3 10.0.0.158:4000 check
+
+listen haproxy_stats
+    bind *:8080
+    mode http
+    stats enable
+    stats uri /stats
+    stats refresh 5s
+    stats auth admin:admin123
+
+=== PUERTOS ESCUCHANDO ===
+tcp   LISTEN 0      4096         0.0.0.0:3390       0.0.0.0:*    users:(("haproxy",pid=84704,fd=7))                       
+tcp   LISTEN 0      4096         0.0.0.0:8080       0.0.0.0:*    users:(("haproxy",pid=84704,fd=8))                       

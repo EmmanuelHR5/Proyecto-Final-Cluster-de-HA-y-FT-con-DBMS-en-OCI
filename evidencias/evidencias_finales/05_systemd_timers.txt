@@ -1,0 +1,19 @@
+=== TIMERS SYSTEMD ===
+NEXT                        LEFT          LAST                        PASSED    UNIT                                             ACTIVATES
+Sun 2026-05-31 20:47:06 UTC 9min left     Sun 2026-05-31 20:25:41 UTC 12min ago unified-monitoring-agent_config_downloader.timer unified-monitoring-agent_config_downloader.service
+Sun 2026-05-31 20:50:17 UTC 12min left    Sun 2026-05-31 19:46:33 UTC 51min ago dnf-makecache.timer                              dnf-makecache.service
+Mon 2026-06-01 00:00:00 UTC 3h 22min left Sun 2026-05-31 00:00:00 UTC 20h ago   logrotate.timer                                  logrotate.service
+Mon 2026-06-01 08:21:30 UTC 11h left      Sun 2026-05-31 08:21:30 UTC 12h ago   systemd-tmpfiles-clean.timer                     systemd-tmpfiles-clean.service
+
+4 timers listed.
+
+=== SERVICIOS PERSONALIZADOS ===
+  dracut-shutdown.service                               loaded    active     exited        Restore /run/initramfs on shutdown
+  iscsi-shutdown.service                                loaded    inactive   dead          Logout off all iSCSI sessions on shutdown
+  iscsi.service                                         loaded    inactive   dead          Login and scanning of iSCSI devices
+  logrotate.service                                     loaded    inactive   dead          Rotate log files
+  rsyslog.service                                       loaded    active     running       System Logging Service
+● syslog.service                                        not-found inactive   dead          syslog.service
+  systemd-journal-catalog-update.service                loaded    inactive   dead          Rebuild Journal Catalog
+  systemd-logind.service                                loaded    active     running       User Login Management
+  tidb-4000.service                                     loaded    active     running       tidb service

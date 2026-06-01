@@ -1,0 +1,17 @@
+=== PRUEBA DE CONEXION POR HAPROXY / BALANCEADOR ===
+fecha_servidor
+2026-05-31 20:48:36
+base_actual
+NULL
+Database
+INFORMATION_SCHEMA
+METRICS_SCHEMA
+PERFORMANCE_SCHEMA
+mysql
+proyecto_final
+test
+Tables_in_proyecto_final
+pedidos
+prueba_pitr
+total_tablas
+2

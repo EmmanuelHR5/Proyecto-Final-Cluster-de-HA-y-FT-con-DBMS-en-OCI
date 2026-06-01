@@ -1,0 +1,125 @@
+=== SCRIPTS AUTOMATIZADOS EN HOME ===
+/home/rocky/tidb-deploy/tikv-20160/scripts/run_tikv.sh
+/home/rocky/tidb-deploy/pd-2379/scripts/run_pd.sh
+/home/rocky/tidb-deploy/tidb-4000/scripts/run_tidb.sh
+/home/rocky/tidb-deploy/prometheus-9090/scripts/run_prometheus.sh
+/home/rocky/tidb-deploy/prometheus-9090/scripts/ng-wrapper.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/trigger_docker_build.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/ci-frontend-metrics.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/circle-test-backend.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/ci-job-succeeded.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/circle-test-frontend.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/circle-release-canary-packages.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/ci-reference-docs-build.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/ci-reference-docs-lint.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/ci-job-started.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/protobuf-check.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/trigger_grafana_packer.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/ci-job-failed.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/circle-test-cache-servers.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/circle-test-mysql.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/ci-check-strict.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/import_many_dashboards.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/mixin-check.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/tag_release.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/circle-test-postgres.sh
+/home/rocky/tidb-deploy/grafana-3000/bin/scripts/trigger_windows_build.sh
+/home/rocky/tidb-deploy/grafana-3000/scripts/run_grafana.sh
+/home/rocky/tidb-deploy/alertmanager-9093/scripts/run_alertmanager.sh
+/home/rocky/tidb-deploy/monitor-9100/scripts/run_blackbox_exporter.sh
+/home/rocky/tidb-deploy/monitor-9100/scripts/run_node_exporter.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/pd-10.0.0.73-2379.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/tikv-10.0.0.73-20160.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/pd-10.0.0.174-2379.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/pd-10.0.0.158-2379.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/tikv-10.0.0.174-20160.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_pd_10.0.0.158_2379.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_pd_10.0.0.73_2379.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_tikv_10.0.0.73_20160.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_tikv_10.0.0.174_20160.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_pd_10.0.0.174_2379.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/tikv-10.0.0.158-20160.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/tidb-10.0.0.174-4000.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/tidb-10.0.0.73-4000.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_tikv_10.0.0.158_20160.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/tidb-10.0.0.158-4000.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_tidb_10.0.0.73_4000.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_tidb_10.0.0.174_4000.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/prometheus-10.0.0.174-9090.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_tidb_10.0.0.158_4000.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_prometheus_10.0.0.174_9090.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/grafana-10.0.0.174-3000.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/alertmanager-10.0.0.174-9093.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_grafana_10.0.0.174_3000.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_alertmanager_10.0.0.174_9093.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/blackbox_exporter-10.0.0.73-9115.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/node_exporter-10.0.0.73-9100.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/node_exporter-10.0.0.174-9100.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/node_exporter-10.0.0.158-9100.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/blackbox_exporter-10.0.0.174-9115.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_blackbox_exporter_10.0.0.73.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_node_exporter_10.0.0.158.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_blackbox_exporter_10.0.0.174.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_node_exporter_10.0.0.73.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_node_exporter_10.0.0.174.sh
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/blackbox_exporter-10.0.0.158-9115.service
+/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_blackbox_exporter_10.0.0.158.sh
+/home/rocky/scripts/backup_tidb.sh
+/home/rocky/scripts/check_cluster.sh
+/home/rocky/scripts/limpiar_logs.sh
+/home/rocky/scripts/backup_incremental_logico.sh
+/home/rocky/scripts/alerta_cluster_correo.sh
+
+=== PERMISOS DE SCRIPTS ===
+-rwxr-xr-x 1 rocky rocky 734 May 30 08:12 /home/rocky/tidb-deploy/tikv-20160/scripts/run_tikv.sh
+-rwxr-xr-x 1 rocky rocky 822 May 30 08:12 /home/rocky/tidb-deploy/pd-2379/scripts/run_pd.sh
+-rwxr-xr-x 1 rocky rocky 693 May 30 08:12 /home/rocky/tidb-deploy/tidb-4000/scripts/run_tidb.sh
+-rwxr-xr-x 1 rocky rocky 1.1K May 30 08:12 /home/rocky/tidb-deploy/prometheus-9090/scripts/run_prometheus.sh
+-rw-r--r-- 1 rocky rocky 317 May 30 08:13 /home/rocky/tidb-deploy/prometheus-9090/scripts/ng-wrapper.sh
+-rwxr-xr-x 1 rocky rocky 451 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/trigger_docker_build.sh
+-rwxr-xr-x 1 rocky rocky 1.4K Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/ci-frontend-metrics.sh
+-rwxr-xr-x 1 rocky rocky 361 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/circle-test-backend.sh
+-rwxr-xr-x 1 rocky rocky 507 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/ci-job-succeeded.sh
+-rwxr-xr-x 1 rocky rocky 471 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/circle-test-frontend.sh
+-rwxr-xr-x 1 rocky rocky 1.3K Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/circle-release-canary-packages.sh
+-rwxr-xr-x 1 rocky rocky 557 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/ci-reference-docs-build.sh
+-rwxr-xr-x 1 rocky rocky 1.7K Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/ci-reference-docs-lint.sh
+-rwxr-xr-x 1 rocky rocky 119 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/ci-job-started.sh
+-rwxr-xr-x 1 rocky rocky 743 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/protobuf-check.sh
+-rwxr-xr-x 1 rocky rocky 280 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/trigger_grafana_packer.sh
+-rwxr-xr-x 1 rocky rocky 507 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/ci-job-failed.sh
+-rwxr-xr-x 1 rocky rocky 294 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/circle-test-cache-servers.sh
+-rwxr-xr-x 1 rocky rocky 237 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/circle-test-mysql.sh
+-rwxr-xr-x 1 rocky rocky 376 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/ci-check-strict.sh
+-rwxr-xr-x 1 rocky rocky 23K Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/import_many_dashboards.sh
+-rwxr-xr-x 1 rocky rocky 178 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/mixin-check.sh
+-rwxr-xr-x 1 rocky rocky 892 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/tag_release.sh
+-rwxr-xr-x 1 rocky rocky 239 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/circle-test-postgres.sh
+-rwxr-xr-x 1 rocky rocky 488 Oct  5  2021 /home/rocky/tidb-deploy/grafana-3000/bin/scripts/trigger_windows_build.sh
+-rwxr-xr-x 1 rocky rocky 377 May 30 08:12 /home/rocky/tidb-deploy/grafana-3000/scripts/run_grafana.sh
+-rwxr-xr-x 1 rocky rocky 675 May 30 08:12 /home/rocky/tidb-deploy/alertmanager-9093/scripts/run_alertmanager.sh
+-rwxr-xr-x 1 rocky rocky 539 May 30 08:12 /home/rocky/tidb-deploy/monitor-9100/scripts/run_blackbox_exporter.sh
+-rwxr-xr-x 1 rocky rocky 692 May 30 08:12 /home/rocky/tidb-deploy/monitor-9100/scripts/run_node_exporter.sh
+-rwxr-xr-x 1 rocky rocky 822 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_pd_10.0.0.158_2379.sh
+-rwxr-xr-x 1 rocky rocky 819 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_pd_10.0.0.73_2379.sh
+-rwxr-xr-x 1 rocky rocky 732 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_tikv_10.0.0.73_20160.sh
+-rwxr-xr-x 1 rocky rocky 734 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_tikv_10.0.0.174_20160.sh
+-rwxr-xr-x 1 rocky rocky 822 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_pd_10.0.0.174_2379.sh
+-rwxr-xr-x 1 rocky rocky 734 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_tikv_10.0.0.158_20160.sh
+-rwxr-xr-x 1 rocky rocky 692 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_tidb_10.0.0.73_4000.sh
+-rwxr-xr-x 1 rocky rocky 693 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_tidb_10.0.0.174_4000.sh
+-rwxr-xr-x 1 rocky rocky 693 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_tidb_10.0.0.158_4000.sh
+-rwxr-xr-x 1 rocky rocky 1.1K May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_prometheus_10.0.0.174_9090.sh
+-rwxr-xr-x 1 rocky rocky 377 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_grafana_10.0.0.174_3000.sh
+-rwxr-xr-x 1 rocky rocky 675 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_alertmanager_10.0.0.174_9093.sh
+-rwxr-xr-x 1 rocky rocky 539 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_blackbox_exporter_10.0.0.73.sh
+-rwxr-xr-x 1 rocky rocky 692 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_node_exporter_10.0.0.158.sh
+-rwxr-xr-x 1 rocky rocky 539 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_blackbox_exporter_10.0.0.174.sh
+-rwxr-xr-x 1 rocky rocky 692 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_node_exporter_10.0.0.73.sh
+-rwxr-xr-x 1 rocky rocky 692 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_node_exporter_10.0.0.174.sh
+-rwxr-xr-x 1 rocky rocky 539 May 30 08:12 /home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/config-cache/run_blackbox_exporter_10.0.0.158.sh
+-rwxr-xr-x 1 rocky rocky 332 May 30 08:34 /home/rocky/scripts/backup_tidb.sh
+-rwxr-xr-x 1 rocky rocky 271 May 30 08:34 /home/rocky/scripts/check_cluster.sh
+-rwxr-xr-x 1 rocky rocky 232 May 30 08:34 /home/rocky/scripts/limpiar_logs.sh
+-rwxr-xr-x 1 rocky rocky 654 May 31 04:20 /home/rocky/scripts/backup_incremental_logico.sh
+-rwxr-xr-x 1 rocky rocky 532 May 31 04:16 /home/rocky/scripts/alerta_cluster_correo.sh

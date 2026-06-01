@@ -1,0 +1,23 @@
+Cluster type:       tidb
+Cluster name:       tidb-cluster
+Cluster version:    v7.5.0
+Deploy user:        rocky
+SSH type:           builtin
+Dashboard URL:      http://10.0.0.73:2379/dashboard
+Dashboard URLs:     http://10.0.0.73:2379/dashboard
+Grafana URL:        http://10.0.0.174:3000
+ID                Role          Host        Ports                 OS/Arch       Status   Data Dir                                 Deploy Dir
+--                ----          ----        -----                 -------       ------   --------                                 ----------
+10.0.0.174:9093   alertmanager  10.0.0.174  9093/9094             linux/x86_64  Up       /home/rocky/tidb-data/alertmanager-9093  /home/rocky/tidb-deploy/alertmanager-9093
+10.0.0.174:3000   grafana       10.0.0.174  3000                  linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/grafana-3000
+10.0.0.158:2379   pd            10.0.0.158  2379/2380             linux/x86_64  Up       /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.174:2379   pd            10.0.0.174  2379/2380             linux/x86_64  Up       /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.73:2379    pd            10.0.0.73   2379/2380             linux/x86_64  Up|L|UI  /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.174:9090   prometheus    10.0.0.174  9090/9115/9100/12020  linux/x86_64  Up       /home/rocky/tidb-data/prometheus-9090    /home/rocky/tidb-deploy/prometheus-9090
+10.0.0.158:4000   tidb          10.0.0.158  4000/10080            linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.174:4000   tidb          10.0.0.174  4000/10080            linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.73:4000    tidb          10.0.0.73   4000/10080            linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.158:20160  tikv          10.0.0.158  20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+10.0.0.174:20160  tikv          10.0.0.174  20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+10.0.0.73:20160   tikv          10.0.0.73   20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+Total nodes: 12

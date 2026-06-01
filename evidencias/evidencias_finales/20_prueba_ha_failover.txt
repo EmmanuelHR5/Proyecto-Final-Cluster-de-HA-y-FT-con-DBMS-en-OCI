@@ -1,0 +1,333 @@
+=== PRUEBA DE ALTA DISPONIBILIDAD / FAILOVER TiDB + HAProxy ===
+
+Objetivo:
+Validar que el cluster TiDB continúa respondiendo mediante HAProxy aunque se detenga uno de los nodos TiDB.
+
+=== Estado inicial del cluster ===
+Checking updates for component cluster... Cluster type:       tidb
+Cluster name:       tidb-cluster
+Cluster version:    v7.5.0
+Deploy user:        rocky
+SSH type:           builtin
+Dashboard URL:      http://10.0.0.73:2379/dashboard
+Dashboard URLs:     http://10.0.0.73:2379/dashboard
+Grafana URL:        http://10.0.0.174:3000
+ID                Role          Host        Ports                 OS/Arch       Status   Data Dir                                 Deploy Dir
+--                ----          ----        -----                 -------       ------   --------                                 ----------
+10.0.0.174:9093   alertmanager  10.0.0.174  9093/9094             linux/x86_64  Up       /home/rocky/tidb-data/alertmanager-9093  /home/rocky/tidb-deploy/alertmanager-9093
+10.0.0.174:3000   grafana       10.0.0.174  3000                  linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/grafana-3000
+10.0.0.158:2379   pd            10.0.0.158  2379/2380             linux/x86_64  Up       /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.174:2379   pd            10.0.0.174  2379/2380             linux/x86_64  Up       /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.73:2379    pd            10.0.0.73   2379/2380             linux/x86_64  Up|L|UI  /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.174:9090   prometheus    10.0.0.174  9090/9115/9100/12020  linux/x86_64  Up       /home/rocky/tidb-data/prometheus-9090    /home/rocky/tidb-deploy/prometheus-9090
+10.0.0.158:4000   tidb          10.0.0.158  4000/10080            linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.174:4000   tidb          10.0.0.174  4000/10080            linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.73:4000    tidb          10.0.0.73   4000/10080            linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.158:20160  tikv          10.0.0.158  20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+10.0.0.174:20160  tikv          10.0.0.174  20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+10.0.0.73:20160   tikv          10.0.0.73   20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+Total nodes: 12
+
+=== Prueba inicial de conexión por HAProxy puerto 3390 ===
+fecha_prueba
+2026-06-01 00:11:32
+Database
+INFORMATION_SCHEMA
+METRICS_SCHEMA
+PERFORMANCE_SCHEMA
+mysql
+proyecto_final
+test
+Tables_in_proyecto_final
+auditoria_demo
+pedidos
+prueba_pitr
+
+=== Se detiene un nodo TiDB: 10.0.0.158:4000 ===
+Mon Jun  1 00:11:43 UTC 2026
++ [ Serial ] - SSHKeySet: privateKey=/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/ssh/id_rsa, publicKey=/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/ssh/id_rsa.pub
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.73
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.73
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.158
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.174
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.73
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.158
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.174
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.174
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.174
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.158
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.174
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.174
++ [ Serial ] - StopCluster
+Stopping component tidb
+	Stopping instance 10.0.0.158
+	Stop tidb 10.0.0.158:4000 success
+Stopping component node_exporter
+Stopping component blackbox_exporter
+Stopped cluster `tidb-cluster` successfully
+
+=== Estado del cluster después de detener un TiDB ===
+Cluster type:       tidb
+Cluster name:       tidb-cluster
+Cluster version:    v7.5.0
+Deploy user:        rocky
+SSH type:           builtin
+Dashboard URL:      http://10.0.0.73:2379/dashboard
+Dashboard URLs:     http://10.0.0.73:2379/dashboard
+Grafana URL:        http://10.0.0.174:3000
+ID                Role          Host        Ports                 OS/Arch       Status   Data Dir                                 Deploy Dir
+--                ----          ----        -----                 -------       ------   --------                                 ----------
+10.0.0.174:9093   alertmanager  10.0.0.174  9093/9094             linux/x86_64  Up       /home/rocky/tidb-data/alertmanager-9093  /home/rocky/tidb-deploy/alertmanager-9093
+10.0.0.174:3000   grafana       10.0.0.174  3000                  linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/grafana-3000
+10.0.0.158:2379   pd            10.0.0.158  2379/2380             linux/x86_64  Up       /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.174:2379   pd            10.0.0.174  2379/2380             linux/x86_64  Up       /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.73:2379    pd            10.0.0.73   2379/2380             linux/x86_64  Up|L|UI  /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.174:9090   prometheus    10.0.0.174  9090/9115/9100/12020  linux/x86_64  Up       /home/rocky/tidb-data/prometheus-9090    /home/rocky/tidb-deploy/prometheus-9090
+10.0.0.158:4000   tidb          10.0.0.158  4000/10080            linux/x86_64  Down     -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.174:4000   tidb          10.0.0.174  4000/10080            linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.73:4000    tidb          10.0.0.73   4000/10080            linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.158:20160  tikv          10.0.0.158  20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+10.0.0.174:20160  tikv          10.0.0.174  20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+10.0.0.73:20160   tikv          10.0.0.73   20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+Total nodes: 12
+
+=== Prueba de continuidad por HAProxy con un TiDB detenido ===
+--- Consulta 1 ---
+fecha	servidor_tidb
+2026-06-01 00:11:49	dbnodo2
+total_tablas
+3
+--- Consulta 2 ---
+fecha	servidor_tidb
+2026-06-01 00:11:50	dbnodo1
+total_tablas
+3
+--- Consulta 3 ---
+fecha	servidor_tidb
+2026-06-01 00:11:51	dbnodo2
+total_tablas
+3
+--- Consulta 4 ---
+fecha	servidor_tidb
+2026-06-01 00:11:52	dbnodo1
+total_tablas
+3
+--- Consulta 5 ---
+fecha	servidor_tidb
+2026-06-01 00:11:53	dbnodo2
+total_tablas
+3
+--- Consulta 6 ---
+fecha	servidor_tidb
+2026-06-01 00:11:54	dbnodo1
+total_tablas
+3
+--- Consulta 7 ---
+fecha	servidor_tidb
+2026-06-01 00:11:55	dbnodo2
+total_tablas
+3
+--- Consulta 8 ---
+fecha	servidor_tidb
+2026-06-01 00:11:56	dbnodo1
+total_tablas
+3
+--- Consulta 9 ---
+fecha	servidor_tidb
+2026-06-01 00:11:57	dbnodo2
+total_tablas
+3
+--- Consulta 10 ---
+fecha	servidor_tidb
+2026-06-01 00:11:58	dbnodo1
+total_tablas
+3
+
+=== Estado del cluster después de detener un TiDB ===
+Cluster type:       tidb
+Cluster name:       tidb-cluster
+Cluster version:    v7.5.0
+Deploy user:        rocky
+SSH type:           builtin
+Dashboard URL:      http://10.0.0.73:2379/dashboard
+Dashboard URLs:     http://10.0.0.73:2379/dashboard
+Grafana URL:        http://10.0.0.174:3000
+ID                Role          Host        Ports                 OS/Arch       Status   Data Dir                                 Deploy Dir
+--                ----          ----        -----                 -------       ------   --------                                 ----------
+10.0.0.174:9093   alertmanager  10.0.0.174  9093/9094             linux/x86_64  Up       /home/rocky/tidb-data/alertmanager-9093  /home/rocky/tidb-deploy/alertmanager-9093
+10.0.0.174:3000   grafana       10.0.0.174  3000                  linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/grafana-3000
+10.0.0.158:2379   pd            10.0.0.158  2379/2380             linux/x86_64  Up       /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.174:2379   pd            10.0.0.174  2379/2380             linux/x86_64  Up       /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.73:2379    pd            10.0.0.73   2379/2380             linux/x86_64  Up|L|UI  /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.174:9090   prometheus    10.0.0.174  9090/9115/9100/12020  linux/x86_64  Up       /home/rocky/tidb-data/prometheus-9090    /home/rocky/tidb-deploy/prometheus-9090
+10.0.0.158:4000   tidb          10.0.0.158  4000/10080            linux/x86_64  Down     -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.174:4000   tidb          10.0.0.174  4000/10080            linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.73:4000    tidb          10.0.0.73   4000/10080            linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.158:20160  tikv          10.0.0.158  20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+10.0.0.174:20160  tikv          10.0.0.174  20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+10.0.0.73:20160   tikv          10.0.0.73   20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+Total nodes: 12
+
+=== Prueba de continuidad por HAProxy con un TiDB detenido ===
+--- Consulta 1 ---
+fecha	servidor_tidb
+2026-06-01 00:12:03	dbnodo2
+total_tablas
+3
+--- Consulta 2 ---
+fecha	servidor_tidb
+2026-06-01 00:12:04	dbnodo1
+total_tablas
+3
+--- Consulta 3 ---
+fecha	servidor_tidb
+2026-06-01 00:12:05	dbnodo2
+total_tablas
+3
+--- Consulta 4 ---
+fecha	servidor_tidb
+2026-06-01 00:12:06	dbnodo1
+total_tablas
+3
+--- Consulta 5 ---
+fecha	servidor_tidb
+2026-06-01 00:12:07	dbnodo2
+total_tablas
+3
+--- Consulta 6 ---
+fecha	servidor_tidb
+2026-06-01 00:12:09	dbnodo1
+total_tablas
+3
+--- Consulta 7 ---
+fecha	servidor_tidb
+2026-06-01 00:12:10	dbnodo2
+total_tablas
+3
+--- Consulta 8 ---
+fecha	servidor_tidb
+2026-06-01 00:12:11	dbnodo1
+total_tablas
+3
+--- Consulta 9 ---
+fecha	servidor_tidb
+2026-06-01 00:12:12	dbnodo2
+total_tablas
+3
+--- Consulta 10 ---
+fecha	servidor_tidb
+2026-06-01 00:12:13	dbnodo1
+total_tablas
+3
+
+=== Estado HAProxy durante la prueba ===
+● haproxy.service - HAProxy Load Balancer
+     Loaded: loaded (/usr/lib/systemd/system/haproxy.service; enabled; preset: disabled)
+     Active: active (running) since Sun 2026-05-31 18:52:14 UTC; 5h 20min ago
+    Process: 84700 ExecStartPre=/usr/sbin/haproxy -f $CONFIG -f $CFGDIR -c -q $OPTIONS (code=exited, status=0/SUCCESS)
+   Main PID: 84702 (haproxy)
+     Status: "Ready."
+      Tasks: 3 (limit: 48533)
+     Memory: 6.9M (peak: 7.4M)
+        CPU: 5.341s
+     CGroup: /system.slice/haproxy.service
+             ├─84702 /usr/sbin/haproxy -Ws -f /etc/haproxy/haproxy.cfg -f /etc/haproxy/conf.d -p /run/haproxy.pid
+             └─84704 /usr/sbin/haproxy -Ws -f /etc/haproxy/haproxy.cfg -f /etc/haproxy/conf.d -p /run/haproxy.pid
+
+Jun 01 00:12:03 dbnodo1 haproxy[84704]: 127.0.0.1:41944 [01/Jun/2026:00:12:03.890] tidb_frontend tidb_backend/tidb2 1/0/16 368 -- 1/1/0/0/0 0/0
+Jun 01 00:12:04 dbnodo1 haproxy[84704]: 127.0.0.1:41950 [01/Jun/2026:00:12:04.917] tidb_frontend tidb_backend/tidb1 1/0/16 368 -- 1/1/0/0/0 0/0
+Jun 01 00:12:05 dbnodo1 haproxy[84704]: 127.0.0.1:41964 [01/Jun/2026:00:12:05.943] tidb_frontend tidb_backend/tidb2 1/0/11 368 -- 1/1/0/0/0 0/0
+Jun 01 00:12:06 dbnodo1 haproxy[84704]: 127.0.0.1:41968 [01/Jun/2026:00:12:06.964] tidb_frontend tidb_backend/tidb1 1/0/10 368 -- 1/1/0/0/0 0/0
+Jun 01 00:12:08 dbnodo1 haproxy[84704]: 127.0.0.1:41980 [01/Jun/2026:00:12:07.984] tidb_frontend tidb_backend/tidb2 1/0/16 368 -- 1/1/0/0/0 0/0
+Jun 01 00:12:09 dbnodo1 haproxy[84704]: 127.0.0.1:41992 [01/Jun/2026:00:12:09.011] tidb_frontend tidb_backend/tidb1 1/0/18 368 -- 1/1/0/0/0 0/0
+Jun 01 00:12:10 dbnodo1 haproxy[84704]: 127.0.0.1:41994 [01/Jun/2026:00:12:10.039] tidb_frontend tidb_backend/tidb2 1/0/12 368 -- 1/1/0/0/0 0/0
+Jun 01 00:12:11 dbnodo1 haproxy[84704]: 127.0.0.1:42000 [01/Jun/2026:00:12:11.062] tidb_frontend tidb_backend/tidb1 1/0/12 368 -- 1/1/0/0/0 0/0
+Jun 01 00:12:12 dbnodo1 haproxy[84704]: 127.0.0.1:42016 [01/Jun/2026:00:12:12.083] tidb_frontend tidb_backend/tidb2 1/0/16 368 -- 1/1/0/0/0 0/0
+Jun 01 00:12:13 dbnodo1 haproxy[84704]: 127.0.0.1:53112 [01/Jun/2026:00:12:13.110] tidb_frontend tidb_backend/tidb1 1/0/14 368 -- 1/1/0/0/0 0/0
+
+=== Configuración HAProxy usada ===
+global
+    log /dev/log local0
+    maxconn 4096
+    daemon
+
+defaults
+    log global
+    mode tcp
+    option tcplog
+    timeout connect 10s
+    timeout client 1m
+    timeout server 1m
+
+frontend tidb_frontend
+    bind *:3390
+    default_backend tidb_backend
+
+backend tidb_backend
+    balance roundrobin
+    option tcp-check
+    server tidb1 10.0.0.174:4000 check
+    server tidb2 10.0.0.73:4000 check
+    server tidb3 10.0.0.158:4000 check
+
+listen haproxy_stats
+    bind *:8080
+    mode http
+    stats enable
+    stats uri /stats
+    stats refresh 5s
+    stats auth admin:admin123
+
+=== Se restaura el nodo TiDB detenido: 10.0.0.158:4000 ===
+Mon Jun  1 00:12:23 UTC 2026
+Starting cluster tidb-cluster...
++ [ Serial ] - SSHKeySet: privateKey=/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/ssh/id_rsa, publicKey=/home/rocky/.tiup/storage/cluster/clusters/tidb-cluster/ssh/id_rsa.pub
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.73
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.158
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.174
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.73
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.158
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.174
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.174
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.174
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.174
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.73
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.158
++ [Parallel] - UserSSH: user=rocky, host=10.0.0.174
++ [ Serial ] - StartCluster
+Starting component tidb
+	Starting instance 10.0.0.158:4000
+	Start instance 10.0.0.158:4000 success
+Starting component node_exporter
+	Starting instance 10.0.0.158
+	Start 10.0.0.158 success
+Starting component blackbox_exporter
+	Starting instance 10.0.0.158
+	Start 10.0.0.158 success
++ [ Serial ] - UpdateTopology: cluster=tidb-cluster
+Started cluster `tidb-cluster` successfully
+
+=== Estado final del cluster ===
+Cluster type:       tidb
+Cluster name:       tidb-cluster
+Cluster version:    v7.5.0
+Deploy user:        rocky
+SSH type:           builtin
+Dashboard URL:      http://10.0.0.73:2379/dashboard
+Dashboard URLs:     http://10.0.0.73:2379/dashboard
+Grafana URL:        http://10.0.0.174:3000
+ID                Role          Host        Ports                 OS/Arch       Status   Data Dir                                 Deploy Dir
+--                ----          ----        -----                 -------       ------   --------                                 ----------
+10.0.0.174:9093   alertmanager  10.0.0.174  9093/9094             linux/x86_64  Up       /home/rocky/tidb-data/alertmanager-9093  /home/rocky/tidb-deploy/alertmanager-9093
+10.0.0.174:3000   grafana       10.0.0.174  3000                  linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/grafana-3000
+10.0.0.158:2379   pd            10.0.0.158  2379/2380             linux/x86_64  Up       /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.174:2379   pd            10.0.0.174  2379/2380             linux/x86_64  Up       /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.73:2379    pd            10.0.0.73   2379/2380             linux/x86_64  Up|L|UI  /home/rocky/tidb-data/pd-2379            /home/rocky/tidb-deploy/pd-2379
+10.0.0.174:9090   prometheus    10.0.0.174  9090/9115/9100/12020  linux/x86_64  Up       /home/rocky/tidb-data/prometheus-9090    /home/rocky/tidb-deploy/prometheus-9090
+10.0.0.158:4000   tidb          10.0.0.158  4000/10080            linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.174:4000   tidb          10.0.0.174  4000/10080            linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.73:4000    tidb          10.0.0.73   4000/10080            linux/x86_64  Up       -                                        /home/rocky/tidb-deploy/tidb-4000
+10.0.0.158:20160  tikv          10.0.0.158  20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+10.0.0.174:20160  tikv          10.0.0.174  20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+10.0.0.73:20160   tikv          10.0.0.73   20160/20180           linux/x86_64  Up       /home/rocky/tidb-data/tikv-20160         /home/rocky/tidb-deploy/tikv-20160
+Total nodes: 12

@@ -1,0 +1,45 @@
+=== BACKUPS PITR ===
+464K	/home/rocky/backups/pitr_demo/fullbackup
+184K	/home/rocky/backups/pitr_demo/fullbackup.log
+20K	/home/rocky/backups/pitr_demo/log_start.log
+372K	/home/rocky/backups/pitr_demo/logbackup
+464K	/home/rocky/backups/pitr_demo/restore_point.log
+
+=== ARCHIVOS FULLBACKUP ===
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_8413f3e535717226220efaf650a7be0219230df659ab29429c0fbf4292cf25b3_1780255981128_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_fe875e2a93c15723b82b5b2301bcb6e1e438ba77b807428850d8414f065700de_1780255981045_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_b8724add2d6de5e10318a85c1a83b4891ef531cf160147b3c388292317a0ca27_1780255981052_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_cb1446b533efca1ae48d6e440cb635d3f814f3fba98b3d494d7f3db1ef5e447a_1780255981055_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_e4f50bb768550944f40a3b1a9a93f29c997ef26d61fa7b4981d5f990d3596288_1780255981124_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_1e2b8993da060c7ab01cb04951801ee686ac186e1dcd2afbfbe00f5c31555538_1780255981125_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_63ec2d4b1109eb8d5fc28591940cb7767c6dfb0317680fc2030b7ab01e4826aa_1780255981069_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_6ab62cb6b9c98d047051f92dc05de2578651bec8ef7246b1e671dc2eec163e9e_1780255981071_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_c377a22c34f24e6a00ebab582dcfbc370028bb28c1bbdc1aacedb53a7827897a_1780255981072_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_c9345b516a93f173c339b5e7faa9cb643042cab4e5a186d5dc48281a660a4173_1780255981039_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_14bacfce3f1f8b3da25af441864985c189e1be6d05d86120d83b1a6ea468ccbc_1780255981076_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_14cb04ee782e395141d963ea68917b6aab4b9bf3b2763dd6dea04863235515e4_1780255981058_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_1e2c89804112e9f35f02d7609467d4741c3d5168e80b3e996594131355c1ce24_1780255981072_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_2ea11c67735acfe99db8fee84c51cf78540f2d3bd744a716a888be2acf37cab2_1780255981089_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_f90324dd4d578443625f8ddcab14189f623cc094bc811776f45096ce3a71d059_1780255981084_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_4e2aaaddaaf51e8c2ecb7c86dc2d065e469ad77d50acd4ef52ea02ce258a7bcc_1780255981059_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_9f6b09ce1a3edac79953015843adc153658928854036fb930560d0c1e6ebb73e_1780255981135_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/7/277_117_72a4e84f605ed90cbcbbcee4180621ff3ebfb534ff3db815260175d0bacdbd13_1780255981133_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/1/8_121_ed85b58a2c9d34fd5a6d89e79e2ab51ddb78227e5ad4656082bb663714b43d77_1780255981098_default.sst
+/home/rocky/backups/pitr_demo/fullbackup/1/8_121_ed85b58a2c9d34fd5a6d89e79e2ab51ddb78227e5ad4656082bb663714b43d77_1780255981098_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/1/8_121_65f262a749ce002bdd9068e6c1de7d108d064cc96d66d914b63e760af22749f8_1780255981243_write.sst
+/home/rocky/backups/pitr_demo/fullbackup/backup.lock
+/home/rocky/backups/pitr_demo/fullbackup/backupmeta
+/home/rocky/backups/pitr_demo/fullbackup/backupmeta.datafile.000000001
+/home/rocky/backups/pitr_demo/fullbackup/backupmeta.schema.000000002
+
+=== ARCHIVOS LOGBACKUP ===
+/home/rocky/backups/pitr_demo/logbackup/v1/20260531/19/7/schema-meta/466683427976380417-d69f3262-a660-4dc0-aa0c-05ecfd9ff8f8.log
+/home/rocky/backups/pitr_demo/logbackup/v1/20260531/19/7/466683416953225227-8b61eac3-8075-4e73-b89e-6ff357f1cf71.log
+/home/rocky/backups/pitr_demo/logbackup/v1/20260531/19/1/466683427989487618-1e6297e6-bd6f-4d3d-aea3-83e5e107b9d4.log
+/home/rocky/backups/pitr_demo/logbackup/v1/backupmeta/466683412798504962-282d2a67-e775-4e88-beb1-1e7f78baf247.meta
+/home/rocky/backups/pitr_demo/logbackup/v1/backupmeta/466683427714498564-561be084-1971-48d1-94d9-e320a2369908.meta
+/home/rocky/backups/pitr_demo/logbackup/v1/global_checkpoint/1.ts
+/home/rocky/backups/pitr_demo/logbackup/v1/global_checkpoint/7.ts
+/home/rocky/backups/pitr_demo/logbackup/backup.lock
+/home/rocky/backups/pitr_demo/logbackup/backupmeta
+/home/rocky/backups/pitr_demo/logbackup/pitr_id_maps/pitr_id_map.cluster_id:7645594985178201705.restored_ts:466683429650432000

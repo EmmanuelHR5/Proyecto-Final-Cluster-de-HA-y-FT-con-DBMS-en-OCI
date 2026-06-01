@@ -1,0 +1,40 @@
+=== AUDITORIA LOCAL TiDB ===
+
+=== Archivo de auditoria ===
+-rw-r----- 1 rocky rocky 763 Jun  1 00:06 /var/log/dbmaintenance/audit_tidb_demo.log
+
+=== Eventos registrados ===
+2026-06-01 00:06:59 | USER=root | IP=127.0.0.1 | EVENT=SELECT | DB=proyecto_final | TABLE=auditoria_demo | ACTION=Consulta de registros mediante HAProxy puerto 3390
+2026-06-01 00:06:59 | USER=root | IP=127.0.0.1 | EVENT=UPDATE | DB=proyecto_final | TABLE=auditoria_demo | ACTION=Actualizacion de registro de prueba
+2026-06-01 00:06:59 | USER=root | IP=127.0.0.1 | EVENT=DELETE | DB=proyecto_final | TABLE=auditoria_demo | ACTION=Eliminacion de registro de prueba
+2026-06-01 00:06:59 | USER=root | IP=127.0.0.1 | EVENT=DDL | DB=proyecto_final | TABLE=auditoria_ddl_demo | ACTION=CREATE TABLE y DROP TABLE
+2026-06-01 00:06:59 | USER=usuario_invalido | IP=127.0.0.1 | EVENT=LOGIN_FAILED | DB=TiDB | ACTION=Intento fallido de autenticacion documentado para evidencia
+
+=== Validacion de eventos requeridos ===
+2026-06-01 00:06:59 | USER=root | IP=127.0.0.1 | EVENT=SELECT | DB=proyecto_final | TABLE=auditoria_demo | ACTION=Consulta de registros mediante HAProxy puerto 3390
+2026-06-01 00:06:59 | USER=root | IP=127.0.0.1 | EVENT=UPDATE | DB=proyecto_final | TABLE=auditoria_demo | ACTION=Actualizacion de registro de prueba
+2026-06-01 00:06:59 | USER=root | IP=127.0.0.1 | EVENT=DELETE | DB=proyecto_final | TABLE=auditoria_demo | ACTION=Eliminacion de registro de prueba
+2026-06-01 00:06:59 | USER=root | IP=127.0.0.1 | EVENT=DDL | DB=proyecto_final | TABLE=auditoria_ddl_demo | ACTION=CREATE TABLE y DROP TABLE
+2026-06-01 00:06:59 | USER=usuario_invalido | IP=127.0.0.1 | EVENT=LOGIN_FAILED | DB=TiDB | ACTION=Intento fallido de autenticacion documentado para evidencia
+
+=== Auditoria administrativa TiUP encontrada ===
+/home/rocky/.tiup/storage/cluster/audit/gXDDG2TVchv
+/home/rocky/.tiup/storage/cluster/audit/gXDDKYkCMS5
+/home/rocky/.tiup/storage/cluster/audit/gXDFGxDscWP
+/home/rocky/.tiup/storage/cluster/audit/gXDFHpVnTc0
+/home/rocky/.tiup/storage/cluster/audit/gXDFPDgNwK5
+/home/rocky/.tiup/storage/cluster/audit/gXDFRRCJTF9
+/home/rocky/.tiup/storage/cluster/audit/gXDFTzBdxBL
+/home/rocky/.tiup/storage/cluster/audit/gXDGQMD5BdQ
+/home/rocky/.tiup/storage/cluster/audit/gXDGV63Ngk3
+/home/rocky/.tiup/storage/cluster/audit/gXDGVzxkQf9
+/home/rocky/.tiup/storage/cluster/audit/gXDGY4xDmwJ
+/home/rocky/.tiup/storage/cluster/audit/gXDGYdF5FD0
+/home/rocky/.tiup/storage/cluster/audit/gXDGZRqWY4r
+/home/rocky/.tiup/storage/cluster/audit/gXDH0M0wjCM
+/home/rocky/.tiup/storage/cluster/audit/gXDH4vyfQ3H
+/home/rocky/.tiup/storage/cluster/audit/gXDHfBQfvJ4
+/home/rocky/.tiup/storage/cluster/audit/gXFzXZ36QBn
+/home/rocky/.tiup/storage/cluster/audit/gXGcnd6r5G8
+/home/rocky/.tiup/storage/cluster/audit/gXGcnKtTtgN
+/home/rocky/.tiup/storage/cluster/audit/gXGcpJZL5yX

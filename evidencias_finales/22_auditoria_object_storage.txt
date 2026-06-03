@@ -1,0 +1,23 @@
+Subiendo log de auditoría a OCI Object Storage...
+{
+  "etag": "c2275356-82d1-4aeb-9215-aa76255aa975",
+  "last-modified": "Wed, 03 Jun 2026 03:45:30 GMT",
+  "opc-content-md5": "MyeFJcfPN3EbNALYLDyy2g=="
+}
+Log subido correctamente a OCI Object Storage:
+auditoria/audit_tidb_demo_20260603_034529.log
+{
+  "data": [
+    {
+      "archival-state": null,
+      "etag": "c2275356-82d1-4aeb-9215-aa76255aa975",
+      "md5": "MyeFJcfPN3EbNALYLDyy2g==",
+      "name": "auditoria/audit_tidb_demo_20260603_034529.log",
+      "size": 763,
+      "storage-tier": "Standard",
+      "time-created": "2026-06-03T03:45:30.494000+00:00",
+      "time-modified": "2026-06-03T03:45:30.494000+00:00"
+    }
+  ],
+  "prefixes": []
+}

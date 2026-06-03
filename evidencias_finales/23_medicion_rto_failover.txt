@@ -1,0 +1,123 @@
+=== Medición de RTO por HAProxy ===
+Inicio: 2026-06-03 03:55:00
+Consultas cada 1 segundo. Detén un TiDB en otra terminal.
+
+2026-06-03 03:55:00 | OK | servidor=03:55:00 | tiempo=32ms
+2026-06-03 03:55:01 | OK | servidor=03:55:01 | tiempo=16ms
+2026-06-03 03:55:02 | OK | servidor=03:55:02 | tiempo=18ms
+2026-06-03 03:55:03 | OK | servidor=03:55:03 | tiempo=16ms
+2026-06-03 03:55:04 | OK | servidor=03:55:04 | tiempo=16ms
+2026-06-03 03:55:05 | OK | servidor=03:55:05 | tiempo=16ms
+2026-06-03 03:55:06 | OK | servidor=03:55:07 | tiempo=15ms
+2026-06-03 03:55:08 | OK | servidor=03:55:08 | tiempo=15ms
+2026-06-03 03:55:09 | OK | servidor=03:55:09 | tiempo=18ms
+2026-06-03 03:55:10 | OK | servidor=03:55:10 | tiempo=16ms
+2026-06-03 03:55:11 | OK | servidor=03:55:11 | tiempo=16ms
+2026-06-03 03:55:12 | OK | servidor=03:55:12 | tiempo=20ms
+2026-06-03 03:55:13 | OK | servidor= | tiempo=3017ms
+2026-06-03 03:55:17 | OK | servidor=03:55:17 | tiempo=14ms
+2026-06-03 03:55:18 | OK | servidor=03:55:18 | tiempo=18ms
+2026-06-03 03:55:19 | OK | servidor=03:55:19 | tiempo=15ms
+2026-06-03 03:55:20 | OK | servidor=03:55:20 | tiempo=17ms
+2026-06-03 03:55:21 | OK | servidor=03:55:21 | tiempo=15ms
+2026-06-03 03:55:22 | OK | servidor=03:55:22 | tiempo=17ms
+2026-06-03 03:55:23 | OK | servidor=03:55:23 | tiempo=15ms
+2026-06-03 03:55:24 | OK | servidor=03:55:24 | tiempo=17ms
+2026-06-03 03:55:25 | OK | servidor=03:55:25 | tiempo=15ms
+2026-06-03 03:55:26 | OK | servidor=03:55:26 | tiempo=17ms
+2026-06-03 03:55:27 | OK | servidor=03:55:27 | tiempo=16ms
+2026-06-03 03:55:28 | OK | servidor=03:55:28 | tiempo=18ms
+2026-06-03 03:55:29 | OK | servidor=03:55:29 | tiempo=16ms
+2026-06-03 03:55:30 | OK | servidor=03:55:30 | tiempo=15ms
+2026-06-03 03:55:31 | OK | servidor=03:55:31 | tiempo=24ms
+2026-06-03 03:55:32 | OK | servidor=03:55:32 | tiempo=18ms
+2026-06-03 03:55:33 | OK | servidor=03:55:33 | tiempo=16ms
+2026-06-03 03:55:34 | OK | servidor=03:55:34 | tiempo=19ms
+2026-06-03 03:55:35 | OK | servidor=03:55:35 | tiempo=17ms
+2026-06-03 03:55:36 | OK | servidor=03:55:36 | tiempo=18ms
+2026-06-03 03:55:37 | OK | servidor=03:55:37 | tiempo=15ms
+2026-06-03 03:55:38 | OK | servidor=03:55:38 | tiempo=18ms
+2026-06-03 03:55:39 | OK | servidor=03:55:39 | tiempo=15ms
+2026-06-03 03:55:40 | OK | servidor=03:55:40 | tiempo=18ms
+2026-06-03 03:55:41 | OK | servidor=03:55:41 | tiempo=15ms
+2026-06-03 03:55:42 | OK | servidor=03:55:42 | tiempo=20ms
+2026-06-03 03:55:43 | OK | servidor=03:55:43 | tiempo=15ms
+2026-06-03 03:55:44 | OK | servidor=03:55:44 | tiempo=18ms
+2026-06-03 03:55:45 | OK | servidor=03:55:46 | tiempo=15ms
+2026-06-03 03:55:47 | OK | servidor=03:55:47 | tiempo=18ms
+2026-06-03 03:55:48 | OK | servidor=03:55:48 | tiempo=18ms
+2026-06-03 03:55:49 | OK | servidor=03:55:49 | tiempo=19ms
+2026-06-03 03:55:50 | OK | servidor=03:55:50 | tiempo=17ms
+2026-06-03 03:55:51 | OK | servidor=03:55:51 | tiempo=18ms
+2026-06-03 03:55:52 | OK | servidor=03:55:52 | tiempo=15ms
+2026-06-03 03:55:53 | OK | servidor=03:55:53 | tiempo=17ms
+2026-06-03 03:55:54 | OK | servidor=03:55:54 | tiempo=16ms
+2026-06-03 03:55:55 | OK | servidor=03:55:55 | tiempo=17ms
+2026-06-03 03:55:56 | OK | servidor=03:55:56 | tiempo=15ms
+2026-06-03 03:55:57 | OK | servidor=03:55:57 | tiempo=17ms
+2026-06-03 03:55:58 | OK | servidor=03:55:58 | tiempo=15ms
+2026-06-03 03:55:59 | OK | servidor=03:55:59 | tiempo=16ms
+2026-06-03 03:56:00 | OK | servidor=03:56:00 | tiempo=15ms
+2026-06-03 03:56:01 | OK | servidor=03:56:01 | tiempo=18ms
+2026-06-03 03:56:02 | OK | servidor=03:56:02 | tiempo=15ms
+2026-06-03 03:56:03 | OK | servidor=03:56:03 | tiempo=21ms
+2026-06-03 03:56:04 | OK | servidor=03:56:04 | tiempo=17ms
+2026-06-03 03:56:05 | OK | servidor=03:56:05 | tiempo=17ms
+2026-06-03 03:56:06 | OK | servidor=03:56:06 | tiempo=19ms
+2026-06-03 03:56:07 | OK | servidor=03:56:07 | tiempo=17ms
+2026-06-03 03:56:08 | OK | servidor=03:56:08 | tiempo=15ms
+2026-06-03 03:56:09 | OK | servidor=03:56:09 | tiempo=16ms
+2026-06-03 03:56:10 | OK | servidor=03:56:10 | tiempo=16ms
+2026-06-03 03:56:11 | OK | servidor=03:56:11 | tiempo=20ms
+2026-06-03 03:56:12 | OK | servidor=03:56:12 | tiempo=16ms
+2026-06-03 03:56:13 | OK | servidor=03:56:13 | tiempo=15ms
+2026-06-03 03:56:14 | OK | servidor=03:56:14 | tiempo=17ms
+2026-06-03 03:56:15 | OK | servidor=03:56:15 | tiempo=18ms
+2026-06-03 03:56:16 | OK | servidor=03:56:16 | tiempo=15ms
+2026-06-03 03:56:17 | OK | servidor=03:56:17 | tiempo=16ms
+2026-06-03 03:56:18 | OK | servidor=03:56:18 | tiempo=15ms
+2026-06-03 03:56:19 | OK | servidor=03:56:19 | tiempo=16ms
+2026-06-03 03:56:20 | OK | servidor=03:56:20 | tiempo=16ms
+2026-06-03 03:56:22 | OK | servidor=03:56:22 | tiempo=16ms
+2026-06-03 03:56:23 | OK | servidor=03:56:23 | tiempo=16ms
+2026-06-03 03:56:24 | OK | servidor=03:56:24 | tiempo=20ms
+2026-06-03 03:56:25 | OK | servidor=03:56:25 | tiempo=15ms
+2026-06-03 03:56:26 | OK | servidor=03:56:26 | tiempo=19ms
+2026-06-03 03:56:27 | OK | servidor=03:56:27 | tiempo=15ms
+2026-06-03 03:56:28 | OK | servidor=03:56:28 | tiempo=20ms
+2026-06-03 03:56:29 | OK | servidor=03:56:29 | tiempo=16ms
+2026-06-03 03:56:30 | OK | servidor=03:56:30 | tiempo=19ms
+2026-06-03 03:56:31 | OK | servidor=03:56:31 | tiempo=16ms
+2026-06-03 03:56:32 | OK | servidor=03:56:32 | tiempo=16ms
+2026-06-03 03:56:33 | OK | servidor=03:56:33 | tiempo=16ms
+2026-06-03 03:56:34 | OK | servidor=03:56:34 | tiempo=17ms
+2026-06-03 03:56:35 | OK | servidor=03:56:35 | tiempo=15ms
+2026-06-03 03:56:36 | OK | servidor=03:56:36 | tiempo=19ms
+2026-06-03 03:56:37 | OK | servidor=03:56:37 | tiempo=15ms
+2026-06-03 03:56:38 | OK | servidor=03:56:38 | tiempo=17ms
+2026-06-03 03:56:39 | OK | servidor=03:56:39 | tiempo=17ms
+2026-06-03 03:56:40 | OK | servidor=03:56:40 | tiempo=18ms
+2026-06-03 03:56:41 | OK | servidor=03:56:41 | tiempo=15ms
+2026-06-03 03:56:42 | OK | servidor=03:56:42 | tiempo=21ms
+2026-06-03 03:56:43 | OK | servidor=03:56:43 | tiempo=15ms
+2026-06-03 03:56:44 | OK | servidor=03:56:44 | tiempo=17ms
+2026-06-03 03:56:45 | OK | servidor=03:56:45 | tiempo=16ms
+2026-06-03 03:56:46 | OK | servidor=03:56:46 | tiempo=16ms
+2026-06-03 03:56:47 | OK | servidor=03:56:47 | tiempo=22ms
+2026-06-03 03:56:48 | OK | servidor=03:56:48 | tiempo=20ms
+2026-06-03 03:56:49 | OK | servidor=03:56:49 | tiempo=15ms
+2026-06-03 03:56:50 | OK | servidor=03:56:50 | tiempo=20ms
+2026-06-03 03:56:51 | OK | servidor=03:56:51 | tiempo=15ms
+2026-06-03 03:56:52 | OK | servidor=03:56:52 | tiempo=17ms
+2026-06-03 03:56:53 | OK | servidor=03:56:53 | tiempo=15ms
+2026-06-03 03:56:54 | OK | servidor=03:56:54 | tiempo=18ms
+2026-06-03 03:56:55 | OK | servidor=03:56:55 | tiempo=15ms
+2026-06-03 03:56:56 | OK | servidor=03:56:57 | tiempo=19ms
+
+=== Resumen de medición ===
+Durante la prueba se ejecutaron consultas cada segundo mediante HAProxy.
+No se observaron consultas con estado ERROR.
+El mayor tiempo de respuesta registrado fue de 3017 ms.
+RTO observado: 3.017 segundos.
+RPO observado: 0 registros perdidos.
+Resultado: Cumple con failover menor a 10 segundos.
